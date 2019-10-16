@@ -41,7 +41,7 @@ img {
   display:flex;
 }
 .doc-file{
-  padding:100px;
+  margin-left:100px;
 }
 .doc-file1{
   margin-left:100px;
@@ -151,6 +151,7 @@ svg {
     color: #fff;
     background-color: #0ABAB5;
 }
+
 @media (max-width: 992px) {    
 #sidebar-wrapper {
   height: 80vw;
@@ -276,17 +277,17 @@ img {
         <a href="#" class="list-group-item list-group-item-action bg-dark"><img src="https://res.cloudinary.com/undercover/image/upload/v1570695570/customer_zs9l05.svg" alt=""> Client</a>
         <!-- dropDown Menu -->
       <div class="nav-item dropdown">
-        <a href="#" class="nav-link list-group-item list-group-item-action bg-dark" data-toggle="dropdown">
+        <a href="#homeSubmenu" class="nav-link list-group-item list-group-item-action bg-dark " data-toggle="collapse" aria-expanded="false">
         <img src="https://res.cloudinary.com/undercover/image/upload/v1570695514/lightbulb_tnpl08.svg" alt=""> Project  <svg width="16" height="12" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path opacity="0.54" fill-rule="evenodd" clip-rule="evenodd" d="M10.6 0.600098L6 5.2001L1.4 0.600098L0 2.0001L6 8.0001L12 2.0001L10.6 0.600098Z" fill="white"/>
         </svg>
         </a>
-       <div class="dropdown-menu animated fadeInLeft" role="menu">
-          <a class="dropdown-item" href="#">Status</a>  
-          <a class="dropdown-item" href="#">Overview</a>   
-          <a class="dropdown-item" href="#">Collabrators</a>  
-          <a class="dropdown-item" href="#">Task</a>  
-          <a class="dropdown-item" href="#">Documents</a>  
+       <div  aria-expanded="false" class="dropdown-toggle collapse" id="homeSubmenu">
+          <a class="dropdown-item" href="#">Status</a>
+          <a class="dropdown-item" href="#">Overview</a> 
+          <a class="dropdown-item" href="#">Collabrators</a> 
+          <a class="dropdown-item" href="#">Task</a> 
+          <a class="dropdown-item" href="#">Documents</a> 
         </div>
       </div>
 
@@ -342,7 +343,7 @@ img {
       <section class="invoice-body ml-4"> 
           <div class="container ">
             <div>
-             <a href="#"><svg class="imgSvg" width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+             <a href="#"><svg class="imgSvg1" width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M190.375 30H89.75C82.125 30 74.8123 33.2239 69.4207 38.9625C64.029 44.7011 61 52.4844 61 60.6V305.4C61 313.516 64.029 321.299 69.4207 327.037C74.8123 332.776 82.125 336 89.75 336H262.25C269.875 336 277.188 332.776 282.579 327.037C287.971 321.299 291 313.516 291 305.4V137.1L190.375 30Z" fill="#091429"/>
               <path opacity="0.5" d="M190 30V137H291" fill="white"/>
               <line x1="110" y1="267.724" x2="241.983" y2="267.724" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -352,7 +353,7 @@ img {
               <p><a href="#"class="doc-file1" >Generate an NDA</a></p>
             </div>
             <div>
-              <a href="#"><svg class="imgSvg" width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a href="#"><svg class="imgSvg2" width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M190.375 30H89.75C82.125 30 74.8123 33.2239 69.4207 38.9625C64.029 44.7011 61 52.4844 61 60.6V305.4C61 313.516 64.029 321.299 69.4207 327.037C74.8123 332.776 82.125 336 89.75 336H262.25C269.875 336 277.188 332.776 282.579 327.037C287.971 321.299 291 313.516 291 305.4V137.1L190.375 30Z" fill="#091429"/>
               <path opacity="0.5" d="M190 30V137H291" fill="white"/>
               <line x1="110" y1="267.724" x2="241.983" y2="267.724" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
