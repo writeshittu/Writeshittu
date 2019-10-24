@@ -1,381 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Car-park</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lancer-tool</title>
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans|Ubuntu&display=swap');
-    </style>
-</head>
-<style>
-    *{
-        box-sizing: border-box;
-    }
+      <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,700&display=swap" rel="stylesheet"/>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+      <script src="js/bootstrap.min.js"></script>
     
-body {
-    overflow-x: hidden;
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <!-- Bootstrap CSS CDN -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+      
+  </head>
+  <style>
+     /*Main page style by message*/
+ @import url(http://fonts.googleapis.com/css?family=Roboto);
+ :root{
+     --primary-color: #0049b5;
+     --secondary-color: #0ABAB5;
+     --dark-color: #262626;
+     --light-color: #B1B1B1;
+ }
+    
+   /*main style*/
+     
+ .text-primary{
+     color: var(--primary-color) !important;
+ }
+ .text-secondary{
+     color: var(--secondary-color) !important;
+ }
+ .text-dark{
+     color: var(--dark-color) !important;
+ }
+ .text-light{
+     color: var(--light-color) !important;
+ }
+ .bg-primary{
+     background-color: var(--primary-color) !important;
+ }
+ .bg-secondary{
+     background-color: var(--secondary-color) !important;
+ }
+ .bg-light{
+     background-color: var(--light-color) !important;
+ }
+ .bg-dark{
+     background-color: var(--dark-color) !important;
+ }
+ .btn{
+     border: none !important;
+     
+     position: relative;
+     overflow: hidden;
+     transition: all ease-in-out .5s;
+ }
+ .btn::after {
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 25%;
+     height: 100%;
+     width: 40%;
+     background-color: #000;
+     border-radius: 50%;
+     opacity: 0;
+     pointer-events: none;
+     transition: all ease-in-out 1s;
+     transform: scale(5, 5);
+ }
+ .btn:active::after {
+     padding: 0;
+     margin: 0;
+     opacity: .2;
+     transition: 0s;
+     transform: scale(0, 0);
+ }
+ .btn-primary{
+     background-color: var(--primary-color) !important;
+ }
+ .btn-secondary{
+     background-color: var(--secondary-color) !important;
+ }
+ .btn-primary-outline{
+     background-color: transparent !important;
+     color: var(--primary-color)  !important;
+     border: 1px solid var(--primary-color)  !important;
+ }
+ .btn-secondary-outline{
+     background-color: transparent !important;
+     color: var(--secondary-color)  !important;
+     border: 2px solid var(--secondary-color)  !important;
+ }
+ .btn-primary:hover, .btn-secondary:hover, .btn-primary-outline:hover, .btn-secondary-secondary:hover{
+     border-color: inherit !important;
+     opacity: 0.8 !important;
+ }
+ /*------Nav bar---------*/
+ a,
+ a:hover,
+ a:focus {
+   color: inherit;
+   text-decoration: none;
+   transition: all 0.3s;
+ }
+ .navbar {
+   padding-top: 0px;
+   padding-bottom: 0px;
+   background-color: #fff;
+   border: none;
+   border-radius: 0;
+   margin-bottom: 0px;
+ }
+ .navbar-btn {
+   box-shadow: none;
+   outline: none !important;
+   border: none;
+ }
+ .profile-pic{
+   border-radius: 80%;
+   width: 35px;
+ }
+ .navbar-nav .nav-item .nav-link:hover{
+   transition: 0.25s;
+   background-color: #ecf3ff;
+ }
+ 
+ 
+ /* ---------------------------------------------------
+     SIDEBAR STYLE
+ ----------------------------------------------------- */
+ .wrapper {
+   display: flex;
+   width: 100%;
+   align-items: stretch;
+   perspective: 1500px;
+ }
+ #sidebar {
+   min-width: 250px;
+   max-width: 250px;
+   text-align: center;
+   margin-bottom: 25px;
+   background: var(--primary-color);
+   color: #fff;
+   transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+   transform-origin: bottom left;
+ }
+ #sidebar.active {
+   margin-left: -250px;
+   transform: rotateY(100deg);
+ }
+ #sidebar .sidebar-header {
+   padding: 20px;
+   background: var(--primary-color);
+ }
+ #sidebar ul.components {
+   padding: 20px 0;
+   border-bottom: 1px solid var(--primary-color);
+ }
+ #sidebar ul p {
+   color: #fff;
+   padding: 10px;
+ }
+ #sidebar ul li a {
+   padding: 10px;
+   font-size: 1em;
+   font-weight: 600;
+   display: block;
+   transition: 0.4;
+ }
+ #sidebar ul li a:hover {
+   color: #ffffff;
+   background: rgba(19, 41, 82, 1);
+ }
+ #sidebar ul li a img {
+     margin-top: -4px !important;
+     margin-left: 4px;
+     margin-right: 4px;
+ }
+ #sidebar.active ul li a span {
+     vertical-align: text-bottom !important;
+ }
+ #sidebar ul li.active > a,
+ a[aria-expanded="true"] {
+   color: #fff;
+   background: rgb(32, 86, 185);
+ }
+ a[data-toggle="collapse"] {
+   position: relative;
+ }
+ .dropdown-toggle::after {
+   display: block;
+   position: absolute;
+   top: 50%;
+   right: 20px;
+   transform: translateY(-50%);
+ }
+ 
+ /* ---------------------------------------------------
+     CONTENT STYLE
+ ----------------------------------------------------- */
+ #content {
+   width: 100%;
+   min-height: 100vh;
+   transition: all 0.3s;
+ }
+ #sidebarCollapse {
+   width: 40px;
+   height: 40px;
+   background: #f5f5f5;
+   cursor: pointer;
+ }
+ #sidebarCollapse span {
+   width: 80%;
+   height: 2px;
+   margin: 0 auto;
+   display: block;
+   background: #555;
+   transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
+   transition-delay: 0.2s;
+ }
+ #sidebarCollapse span:first-of-type {
+   transform: rotate(45deg) translate(2px, 2px);
+ }
+ #sidebarCollapse span:nth-of-type(2) {
+   opacity: 0;
+ }
+ #sidebarCollapse span:last-of-type {
+   transform: rotate(-45deg) translate(1px, -1px);
+ }
+ #sidebarCollapse.active span {
+   transform: none;
+   opacity: 1;
+   margin: 5px auto;
+ }
+ .welcome-row {
+  background-color: #1A73E8;
+  margin: 0;
+  border: 0;
 }
-#sidebar-wrapper {
-  height: 90vh;
-  width: 40vh;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)!important;
-  -webkit-transition: margin .25s ease-out;
-  -moz-transition: margin .25s ease-out;
-  -o-transition: margin .25s ease-out;
-  transition: margin .25s ease-out;
-}
-img {
-      width: .85rem;
-      margin-right: .5rem;
-      margin-left: 1.8rem;
-}
-.container{
-  display:flex;
-}
-.doc-file{
-  margin-left:100px;
-}
-.doc-file1{
-  margin-left:100px;
-}
-.imgSvg {
-    padding-left: unset;
-      margin-right: .2rem;
-      margin-left: 1.8rem;
-  }
-.bg-dark {
-  background: #091429 !important;
-  font-size: .75rem;
+
+hgroup {
   color: #fff;
-}
-.colorC {
-  color: #00F9FF;
-}
-.colorC2 {
-  color: #0ABAB5;
-}
-.navbar {
-    position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: .5rem 0;
-}
-a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
-    background-color: #c1c1c1!important;
-}
-.list-group-item-action:focus, .list-group-item-action:hover {
-    color: #091429;
-}
-.list-group-item {
-    padding: 1.275rem 1.25rem;
-    margin-bottom: -1px;
-    background-color: #c1c1c1;
-    border: unset;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    letter-spacing: .9px;
-}
-#sidebar-wrapper .sidebar-heading {
-  padding: 0.975rem 3.3rem;
-  font-size: 1.5rem;
-  font-family: 'Pacifico', cursive;
-}
-.dropdown-menu {
-    position: relative;
-    width: 100%;
-    min-width: unset;
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
-    border: none;
-    background:#212531;
-    background: linear-gradient(to right bottom, #2f3441 50%, #212531 50%);
-    color: #fff;
-    box-shadow: none;
-}
-.dropdown-menu.show {
-    top: 0;
-}
-.dropdown-item {
-    display: block;
-    width: 100%;
-    padding: .25rem 1.5rem;
-    clear: both;
-    font-weight: 300;
-    color: #fff;
-}
-svg {
-  padding-left: .5rem;
-  padding-bottom: .2rem;
-}
-#page-content-wrapper {
-  min-width: 100%;
-}
-#wrapper.toggled #sidebar-wrapper {
-  margin-left: 0;
-}
-/*navBar*/
-.bg-light {
-    background-color: unset!important;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-}
-.navbar-light .navbar-nav .nav-link {
-    margin-left: 1.5vw;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-    color: #000;
-}
-.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
-    color: #0ABAB5;
-}
-.btn-outline-dark {
-        font-family: Ubuntu;
-        font-weight: bold;
-        font-size: 14px;
-}
-.btn.bg {
-    color: #fff;
-    background-color: #0ABAB5;
+  margin: 0;
+  border: 0;
 }
 
-@media (max-width: 992px) {    
-#sidebar-wrapper {
-  height: 80vw;
-}
-    
-.col-6.mb-4 {
-    padding-left: 0;
+hgroup>h1 {
+  font-size: 2em;
+  font-weight: 100;
 }
 
-    @media (max-width: 991px) {
-        .nav-item.ml-3 {
-            margin-left: 0!important;
-        }
-    }
+hgroup>h2 {
+  font-size: 1em;
+  font-weight: 100;
+  letter-spacing: 0.05em;
 }
-@media (max-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
-    height: 76vw;
-    width: 20vh;
-  }
-  #page-content-wrapper {
-    min-width: 0;
-    width: 100%;
-  }
+.head-container-parent {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  margin: 0;
+  border:0;
+}
+
+.head-container a {
+  font-size: 1em;
+  font-weight: 100;
+  margin-bottom: 0;
+  color: #777777;
+  transition: color 1.0s, border-bottom 0.1s;
+
+}
+
+.head-container a:hover {
+  text-decoration: none;
+  color: #000;
+  border-bottom: 2px solid #1A73E8;
+
+}
+
+.active-tab {
+  border-bottom: 2px solid #1A73E8;
+}
+ /* ---------------------------------------------------
+     MEDIAQUERIES
+ ----------------------------------------------------- */
+ @media (max-width: 768px) {
+   #sidebar {
+     margin-left: -250px;
+     transform: rotateY(90deg);
+   }
+   #sidebar.active {
+     margin-left: 0;
+     transform: none;
+   }
+   #sidebarCollapse span:first-of-type,
+   #sidebarCollapse span:nth-of-type(2),
+   #sidebarCollapse span:last-of-type {
+     transform: none;
+     opacity: 1;
+     margin: 5px auto;
+   }
+   #sidebarCollapse.active span {
+     margin: 0 auto;
+   }
+   #sidebarCollapse.active span:first-of-type {
+     transform: rotate(45deg) translate(2px, 2px);
+   }
+   #sidebarCollapse.active span:nth-of-type(2) {
+     opacity: 0;
+   }
+   #sidebarCollapse.active span:last-of-type {
+     transform: rotate(-45deg) translate(1px, -1px);
+   }
+ }
+
+
 img {
-      width: .65rem;
-      margin-right: .5rem;
-      margin-left: .2rem;
-}
-.imgSvg {
-      margin-right: .2rem;
-      margin-left: .2rem;
-  }
-  .list-group-item {
-    padding: 1.275rem 1.25rem;
-    margin-bottom: -1px;
-    font-size: .7rem;
-    letter-spacing: .4px;
-}
-#sidebar-wrapper .sidebar-heading {
-  padding: 0.975rem 2.3rem;
-  font-size: 1.15rem;
-}
-.btn-outline-dark {
-        font-size: 10px;
-    padding: .275rem .5rem;
-}
-.btn-outline-dark.ml-4 {
-    margin-left: .5rem!important;
-}
-h1 {
-        font-size: 16px;
-    }
-    p {
-        margin-bottom: .2rem;
-        font-size: .5rem;
-      }
-      .logo-img {
-    width: 4rem;
-}
-     .navbar-light .navbar-nav .nav-link {
-        font-size: .7rem;
-}
-.dropdown-item {
-    font-size: .75rem;
-    }
-}
-@media (max-width: 576px) {
-    .invoice-body.ml-4 div {
-        /* display: none; */
-        display: flex;
-        flex-direction: column;
-    }
-    
-    #sidebar-wrapper {
-    width: 15vh;
-    height: 92vw;
-  }
-img {
-      width: .65rem;
-      margin-right: .1rem;
-      margin-left: .8rem;
-}
-.imgSvg {
-      margin-right: .1rem;
-      margin-left: .8rem;
-  }
-  .list-group-item {
-    padding: 1.275rem 1rem;
-    font-size: .55rem;
-    letter-spacing: .2px;
-}
-#sidebar-wrapper .sidebar-heading {
-  padding: 0.975rem 2.1rem;
-  font-size: .9rem;
-}
 
-     .navbar-light .navbar-nav .nav-link {
-        font-size: .55rem;
-}
-.dropdown-item {
-    font-size: .55rem;
-    }
-}
-@media (max-width: 450px) {
-    #sidebar-wrapper {
-        display: none;
-    }    
+   margin-left: 15px;
 
 }
-</style>
 
-<body>
+  </style>
+  <body>
+    <div class="container-fluid">
+      <div class="wrapper   ">
+        <!-- Sidebar Holder -->
+      <nav id="sidebar">
+        <div class="sidebar-header"></div>
+        <ul class="list-unstyled components">
+            <li class="active">
+              <a href=""><i class="fa fa-dashboard mt-4 active" aria-hidden="true"></i> Dashboard</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-envelope"></i> Mail</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-users"></i> Users</a>
+            </li>
+            <li>
+              <a href=""><i class="fa fa-cog"> </i>Settings</a>
+            </li>
+        </ul>
+      </nav>
+        <!-- Page Content Holder -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light shadow-sm mx-0 p-0">
+                <div class="container-fluid">
+                  <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                  </button>
+                  <form class="form-inline">
+                        <div class="input-group col-12 col">
+                          <input class="form-control" type="text" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1"> <span class="btn btn-default" type="submit">
+                            <i class="fa fa-search"></i> </span>
+                        </div>
+                  </form>
+                  <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                  </button>
+                    
+                  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item mx-4 user-nav dropdown">
+                                <a class="nav-link border-left p-1" href="#"><img class=" profile-pic" src="https://res.cloudinary.com/undercover/image/upload/v1571836747/0_ku7fq0.jpg"><span class="user-name">John Travolta</span><i class=" ml-4 fa fa-angle-down"></i></a>
+                            </li>
+                            
+                          <li class="nav-item">
+                              <a class="nav-link border-left p-1" href=""><img src="https://res.cloudinary.com/undercover/image/upload/v1571836728/flag_uwwjnc.png" height="30" width="auto"> <span class=> EN</span></a>
+                          </li>
+                        </ul>
+                  </div>
+                </div>
+            </nav>
+            <div class="row py-1 mt-0 welcome-row">
+                <!--Welcome back-->
+                <div class="col-6">
+                    <hgroup class="text-left">
+                        <h1>Welcome back Admin</h1>
+                        <p class="mt-1 ">CAR PARK APPLICATION</p>
+                    </hgroup>
+                </div>
+            </div>
+            <div class="row">
+                <!--OVERIEW -->
+                <div class="col-12 px-0 head-container-parent ">
+                    <div class="head-container ml-5 d-flex justify-content">
+                        <a href="#" class="py-0 px-3 active-tab">Overview</a>
+                        <a href="#" class="py-0 px-3">Analytics</a>
+                        <a href="#" class="py-0 px-3">Demographics</a>
+                    </div>
+                </div>
 
-    <div class="d-flex" id="wrapper">
-
-    <!-- Sidebar -->
-    <div class="bg-dark border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Lan<span class="colorC">c</span>ers </div>
-      <div class="list-group list-group-flush">
-        <a href="documents.html" class="list-group-item list-group-item-action bg-dark"><img src="https://res.cloudinary.com/undercover/image/upload/v1570695571/home_dsbjg9.svg" alt=""> Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark"><img src="https://res.cloudinary.com/undercover/image/upload/v1570695570/customer_zs9l05.svg" alt=""> Client</a>
-        <!-- dropDown Menu -->
-      <div class="nav-item dropdown">
-        <a href="#homeSubmenu" class="nav-link list-group-item list-group-item-action bg-dark " data-toggle="collapse" aria-expanded="false">
-        <img src="https://res.cloudinary.com/undercover/image/upload/v1570695514/lightbulb_tnpl08.svg" alt=""> Project  <svg width="16" height="12" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path opacity="0.54" fill-rule="evenodd" clip-rule="evenodd" d="M10.6 0.600098L6 5.2001L1.4 0.600098L0 2.0001L6 8.0001L12 2.0001L10.6 0.600098Z" fill="white"/>
-        </svg>
-        </a>
-       <div  aria-expanded="false" class="dropdown-toggle collapse" id="homeSubmenu">
-          <a class="dropdown-item" href="#">Status</a>
-          <a class="dropdown-item" href="#">Overview</a> 
-          <a class="dropdown-item" href="#">Collabrators</a> 
-          <a class="dropdown-item" href="#">Task</a> 
-          <a class="dropdown-item" href="#">Documents</a> 
-        </div>
-      </div>
-
-        <a href="#" class="list-group-item list-group-item-action bg-dark colorC2"><svg class="imgSvg" width="20.5" height="20.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clip-path="url(#clip0)">
-        <path d="M21.3143 0H7.29379C6.49144 0 5.83864 0.652795 5.83864 1.45515V4.71151C3.17894 5.47266 1.22656 7.92604 1.22656 10.8269C1.22656 13.7278 3.17889 16.1812 5.83864 16.9423V22.545C5.83864 23.3473 6.49144 24.0001 7.29379 24.0001H18.7513C18.8872 24.0001 19.0175 23.9461 19.1137 23.85L22.6193 20.3443C22.7154 20.2482 22.7694 20.1178 22.7694 19.9819V1.45515C22.7694 0.652795 22.1167 0 21.3143 0ZM7.29379 1.02503H21.3143C21.5515 1.02503 21.7444 1.21797 21.7444 1.45515V3.00191H6.86367V1.45515C6.86367 1.21797 7.05662 1.02503 7.29379 1.02503ZM2.25159 10.8269C2.25159 7.88538 4.64463 5.49233 7.58611 5.49233C10.5276 5.49233 12.9206 7.88538 12.9206 10.8269C12.9206 13.7683 10.5276 16.1614 7.58611 16.1614C4.64463 16.1614 2.25159 13.7683 2.25159 10.8269ZM6.86367 22.5449V17.1452C7.10089 17.1721 7.34187 17.1865 7.58616 17.1865C9.49637 17.1865 11.2124 16.3397 12.3791 15.0021H15.5194C15.8025 15.0021 16.0319 14.7726 16.0319 14.4896C16.0319 14.2065 15.8025 13.9771 15.5194 13.9771H13.1091C13.5549 13.1985 13.8405 12.3172 13.9215 11.3783H15.5194C15.8024 11.3783 16.0319 11.1488 16.0319 10.8658C16.0319 10.5827 15.8024 10.3532 15.5194 10.3532H13.928C13.8587 9.41637 13.5853 8.53544 13.1526 7.75451H15.5193C15.8024 7.75451 16.0318 7.52506 16.0318 7.242C16.0318 6.95895 15.8024 6.72949 15.5193 6.72949H12.4455C11.2781 5.34702 9.53298 4.46726 7.58602 4.46726C7.34172 4.46726 7.10074 4.48161 6.86352 4.50855V4.02694H21.7443V19.4693H19.6938C18.8914 19.4693 18.2387 20.1221 18.2387 20.9244V22.975H7.29379C7.05662 22.975 6.86367 22.7821 6.86367 22.5449ZM19.2638 22.2501V20.9244C19.2638 20.6873 19.4568 20.4944 19.6939 20.4944H21.0196L19.2638 22.2501Z" fill="#0ABAB5"/>
-        <path d="M17.534 7.75452H19.236C19.5191 7.75452 19.7485 7.52506 19.7485 7.242C19.7485 6.95895 19.5191 6.72949 19.236 6.72949H17.534C17.2509 6.72949 17.0215 6.95895 17.0215 7.242C17.0215 7.52506 17.2509 7.75452 17.534 7.75452Z" fill="#0ABAB5"/>
-        <path d="M17.534 11.379H19.236C19.5191 11.379 19.7485 11.1496 19.7485 10.8665C19.7485 10.5835 19.5191 10.354 19.236 10.354H17.534C17.2509 10.354 17.0215 10.5835 17.0215 10.8665C17.0215 11.1496 17.2509 11.379 17.534 11.379Z" fill="#0ABAB5"/>
-        <path d="M17.534 15.0026H19.236C19.5191 15.0026 19.7485 14.7731 19.7485 14.4901C19.7485 14.207 19.5191 13.9775 19.236 13.9775H17.534C17.2509 13.9775 17.0215 14.207 17.0215 14.4901C17.0215 14.7731 17.2509 15.0026 17.534 15.0026Z" fill="#0ABAB5"/>
-        <path d="M19.2327 18.6261C19.5158 18.6261 19.7452 18.3966 19.7452 18.1136C19.7452 17.8305 19.5158 17.6011 19.2327 17.6011H14.4383C14.1552 17.6011 13.9258 17.8305 13.9258 18.1136C13.9258 18.3966 14.1552 18.6261 14.4383 18.6261H19.2327Z" fill="#0ABAB5"/>
-        <path d="M11.5646 8.24182L10.9394 7.61656C10.771 7.44821 10.5471 7.35547 10.309 7.35547C10.0708 7.35547 9.847 7.44821 9.6786 7.61656L6.399 10.8962L5.49244 9.98959C5.32409 9.82129 5.1002 9.72855 4.8621 9.72855C4.624 9.72855 4.40011 9.82129 4.23176 9.98964L3.60635 10.615C3.25881 10.9626 3.25881 11.5282 3.6064 11.8757L5.76856 14.0379C5.93696 14.2063 6.16086 14.299 6.399 14.299H6.39905C6.63715 14.299 6.86105 14.2063 7.02935 14.038L11.5647 9.5026C11.9122 9.15502 11.9122 8.5894 11.5646 8.24182ZM6.39896 13.2187L4.42559 11.2453L4.86205 10.8089L6.03654 11.9834C6.23671 12.1835 6.5612 12.1835 6.76138 11.9834L10.309 8.43575L10.7455 8.87221L6.39896 13.2187Z" fill="#0ABAB5"/>
-        </g>
-        <defs>
-        <clipPath id="clip0">
-        <rect width="20.5" height="20.5" fill="white"/>
-        </clipPath>
-        </defs>
-        </svg> invoice </a> 
-
-        <a href="#" class="list-group-item list-group-item-action bg-dark"><img src="https://res.cloudinary.com/undercover/image/upload/v1570695583/policy_hqxu0l.svg" alt=""> Contract</a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark"><img src="https://res.cloudinary.com/undercover/image/upload/v1570695556/approval_yxgv04.svg" alt=""> Proposals</a>
-      </div>
+         
     </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Navbar -->
-    <div id="page-content-wrapper">
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-left mt-2 mt-lg-0">
-            <li class="nav-item">
-              <a class="nav-link " href="#">Project Info </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Client Info</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Settings</a>
-            </li>
-            <li class="nav-item ml-3 active">
-              <a class="nav-link" href="#">Tools & Resources <span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-        </div>
-      </nav> 
-
-      <section class="invoice-body ml-4"> 
-          <div class="container ">
-            <div>
-             <a href="#"><svg class="imgSvg1" width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M190.375 30H89.75C82.125 30 74.8123 33.2239 69.4207 38.9625C64.029 44.7011 61 52.4844 61 60.6V305.4C61 313.516 64.029 321.299 69.4207 327.037C74.8123 332.776 82.125 336 89.75 336H262.25C269.875 336 277.188 332.776 282.579 327.037C287.971 321.299 291 313.516 291 305.4V137.1L190.375 30Z" fill="#091429"/>
-              <path opacity="0.5" d="M190 30V137H291" fill="white"/>
-              <line x1="110" y1="267.724" x2="241.983" y2="267.724" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="110" y1="192" x2="241.983" y2="192" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="110" y1="229.862" x2="241.983" y2="229.862" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg></a>
-              <p><a href="#"class="doc-file1" >Generate an NDA</a></p>
-            </div>
-            <div>
-              <a href="#"><svg class="imgSvg2" width="350" height="350" viewBox="0 0 350 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M190.375 30H89.75C82.125 30 74.8123 33.2239 69.4207 38.9625C64.029 44.7011 61 52.4844 61 60.6V305.4C61 313.516 64.029 321.299 69.4207 327.037C74.8123 332.776 82.125 336 89.75 336H262.25C269.875 336 277.188 332.776 282.579 327.037C287.971 321.299 291 313.516 291 305.4V137.1L190.375 30Z" fill="#091429"/>
-              <path opacity="0.5" d="M190 30V137H291" fill="white"/>
-              <line x1="110" y1="267.724" x2="241.983" y2="267.724" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="110" y1="192" x2="241.983" y2="192" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-              <line x1="110" y1="229.862" x2="241.983" y2="229.862" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg></a>
-              <p><a href="#" class="doc-file">Generate a Contract</a></p>
-            </div>
-
-          </div>
-
-      </section>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
-
+  </body>
 </html>
